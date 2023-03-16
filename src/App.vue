@@ -1,21 +1,33 @@
 <template>
   <div class="navbar">
-    <NavBar title="Tally Counter World" />
+    <NavBar title="Tally World" />
     <div class="routing">
       <router-link to="/">Home</router-link>
+      <router-link to="/counter">Counter</router-link>
       <router-link to="/notfound">NotFound</router-link>
     </div>
   </div>
   <router-view />
+  <FooterComp footer="Copyright Odufejo Ufoma Ibukunoluwa" />
 </template>
 
 <script>
 import NavBar from './components/NavBar'
+import FooterComp from './components/FooterComp';
+import store from './store/index'
 
 export default {
   name: 'App',
-  components: {NavBar}
+  components: {
+    NavBar,
+    FooterComp},
+  provide() {
+    return {
+      store
+    }
+  }
 }
+
 </script>
 
 <style>

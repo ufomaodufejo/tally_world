@@ -1,32 +1,47 @@
 <template>
    <div class="container">
     <div class="counterbody">
-      <h1 class="count"> {{ $store.state.count }}</h1>
+      <h1 class="count"> {{ count }}</h1>
     </div>
     <div>
         <input type="number" v-model="newValue" />
     </div>
     <div class="buttoncomp">
-        <button class="btn increm" @click="$store.commit('increaseCounter')">Increment</button>
-        <button class="btn decrem" @click="$store.commit('decreaseCounter')">Decrement</button>
-        <button class="btn reset" @click="$store.commit('resetCounter')" >Reset</button>
-        <button class="btn setValue" @click="$store.commit('setValue')">setValue</button>
+        <button class="btn increm" @click="increment">Increment</button>
+        <button class="btn decrem" @click="decrement">Decrement</button>
+        <button class="btn reset" @click="reset" >Reset</button>
+        <button class="btn setValue" @click="setValue(newValue)">setValue</button>
       </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-const newValue = ref(10)  
-export default{
-    name: 'CounterBody',
-    data() {
-        return {
-            newValue
-        }
+import useCounter from '@/composables/counter'
+import { ref, inject } from 'vue'
+
+export default {
+  name: 'CounterComponent',
+  
+  setup() {
+    const { count, increment, decrement, reset, setValue } = useCounter()
+
+    const newValue = ref(10)
+
+    const store = inject('store')
+
+    return {
+      count,
+      increment,
+      decrement,
+      reset,
+      setValue,
+      newValue,
+      store
     }
+  },
 }
 </script>
+
 
 <style scoped>
  .container {
@@ -97,6 +112,8 @@ input {
     padding: 12px 20px;
     border-radius: 5px;
     background-color: #e1f7f6;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 </style>
