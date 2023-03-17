@@ -53,11 +53,21 @@ body {
   justify-content: flex-end;
   gap: 50px;
   margin: 20px 0;
-  
 }
 a {
   text-decoration: none;
   font-weight: 900;
   color: #fff;
+}
+@media screen and (max-width: 550px){
+  .routing {
+  gap: 10px;
+  margin: 20px 0;
+}
+a {
+  font-weight: 500;
+  font-size: medium;
+  margin-top: 30px;
+}
 }
 </style>

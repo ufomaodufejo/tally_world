@@ -1,4 +1,5 @@
 <template>
+  <main>
    <div class="container">
     <div class="counterbody">
       <h1 class="count"> {{ count }}</h1>
@@ -11,8 +12,9 @@
         <button class="btn decrem" @click="decrement">Decrement</button>
         <button class="btn reset" @click="reset" >Reset</button>
         <button class="btn setValue" @click="setValue(newValue)">setValue</button>
-      </div>
+    </div>
   </div>
+</main>
 </template>
 
 <script>
@@ -44,6 +46,9 @@ export default {
 
 
 <style scoped>
+main{
+    height: 75vh;
+}
  .container {
   max-width: 500px;
   margin: 30px auto;
@@ -74,6 +79,7 @@ export default {
 .buttoncomp {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .btn {
@@ -116,4 +122,15 @@ input {
     font-weight: 600;
 }
 
+
+@media screen and (max-width: 550px){
+  .buttoncomp{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .btn{
+    width: 50%;
+    flex: 25%;
+  }
+}
 </style>

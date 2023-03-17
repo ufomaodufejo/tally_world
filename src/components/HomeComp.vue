@@ -6,9 +6,9 @@
                 <h2>....the place of accuracy</h2>
                 <div class="para">
                     <p>A tally counter is a mechanical, electronic, or software device used to incrementally count something, typically fleeting. One of the most common things tally counters are used for is counting people, animals, or things that are coming and going from some location.</p>
-                </div>
-               
+                </div> 
             </div>
+
             <div class="imagediv">
                 <img alt="Notfound" src="../assets/tally.jpg">
             </div>
@@ -46,5 +46,23 @@ img{
 }
 .para{
     width: 300px;
+    margin: 20px;
+}
+@media screen and (max-width: 550px){
+.home{
+    flex-wrap: wrap;
+}
+.imagediv {
+    height: 250px;
+    width: 300px;
+    margin-top: 20px;
+}
+h1{
+    font-size: 35px;
+}
+h2{
+    font-size: 25px;
+    margin: 10px
+}
 }
 </style>
