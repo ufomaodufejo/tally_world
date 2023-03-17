@@ -22,3 +22,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Hosted link] (https://voluble-gumption-7ab7c4.netlify.app/)
